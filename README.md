@@ -105,10 +105,4 @@ npm install
 npm run dev
 ```
 
-### **Access Application**
-- **Backend API**: http://localhost:8080/api
-- **Frontend**: http://localhost:3000
-- **API Documentation**: http://localhost:8080/swagger-ui.html
-
----
 
