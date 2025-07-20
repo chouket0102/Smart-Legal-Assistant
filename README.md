@@ -3,11 +3,14 @@
 > **AI-Powered Legal Research & Analysis Platform**  
 > Revolutionizing legal workflows through intelligent multi-agent coordination
 
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.3-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![LangChain4j](https://img.shields.io/badge/LangChain4j-1.0.0--beta2-blue.svg)](https://github.com/langchain4j/langchain4j)
-[![Next.js](https://img.shields.io/badge/Next.js-15.4.2-black.svg)](https://nextjs.org/)
-[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://openjdk.java.net/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+<div align="center">
+     <div>
+    <img src="https://img.shields.io/badge/-SpringBoot-black?style=for-the-badge&logoColor=white&logo=springboot&color=47A248" alt="spring boot" />
+    <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
+    <img src="https://img.shields.io/badge/-LangChain4j-black?style=for-the-badge&logoColor=white&logo=langchain4j&color=412991" alt="groq" />
+  </div>
+</div>
 
 ## 🚀 **Overview**
 
