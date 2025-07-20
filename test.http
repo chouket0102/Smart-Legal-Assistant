@@ -1,0 +1,185 @@
+### 1. Health Check
+GET http://localhost:8080/api/legal-assistant/health
+
+###
+
+### 2. Quick Analysis - Contract Elements
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=What are the key elements of a valid contract?
+
+###
+
+### 3. Quick Analysis - NDA Review
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=Review this NDA for confidentiality terms and identify potential risks
+
+###
+
+### 4. Quick Analysis - GDPR Compliance
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=What are GDPR compliance requirements for data processing in SaaS applications?
+
+###
+
+### 5. Quick Analysis - Patent Research
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=Find recent court cases about software patent infringement in the US
+
+###
+
+### 6. Quick Analysis - Litigation Strategy
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=What litigation strategy should I consider for breach of contract cases?
+
+###
+
+### 7. Full Legal Analysis - Contract Review
+POST http://localhost:8080/api/legal-assistant/analyze
+Content-Type: application/json
+
+{
+  "query": "I need help reviewing a software licensing agreement. What should I look for in terms of liability clauses and termination conditions?",
+  "documentType": "CONTRACT",
+  "jurisdiction": "US",
+  "urgency": "MEDIUM"
+}
+
+###
+
+### 8. Full Legal Analysis - Employment Contract
+POST http://localhost:8080/api/legal-assistant/analyze
+Content-Type: application/json
+
+{
+  "query": "Review employment contract for non-compete clauses and intellectual property rights",
+  "documentType": "EMPLOYMENT_CONTRACT",
+  "jurisdiction": "California",
+  "urgency": "HIGH"
+}
+
+###
+
+### 9. Full Legal Analysis - Compliance Audit
+POST http://localhost:8080/api/legal-assistant/analyze
+Content-Type: application/json
+
+{
+  "query": "Conduct compliance audit for fintech startup regarding PCI DSS and banking regulations",
+  "documentType": "COMPLIANCE_REVIEW",
+  "jurisdiction": "US",
+  "urgency": "HIGH"
+}
+
+###
+
+### 10. Document Analysis - PDF Upload (if implemented)
+POST http://localhost:8080/api/legal-assistant/analyze-document
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="sample-contract.pdf"
+Content-Type: application/pdf
+
+< ./test-documents/sample-contract.pdf
+--boundary
+Content-Disposition: form-data; name="analysisType"
+
+CONTRACT_REVIEW
+--boundary--
+
+###
+
+### 11. Test Contract Analysis Agent
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=Analyze this software license agreement: "The Licensee agrees to indemnify and hold harmless the Licensor from any claims arising from the use of the Software. This agreement terminates immediately upon breach."
+
+###
+
+### 12. Test Compliance Agent  
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=What are the penalties for HIPAA violations in healthcare data breaches affecting more than 500 individuals?
+
+###
+
+### 13. Test Legal Research Agent
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=Research precedents for force majeure clauses in commercial contracts during pandemic situations
+
+###
+
+### 14. Test Legal Strategy Agent
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=Recommend negotiation strategy for merger and acquisition due diligence process
+
+###
+
+### 15. Complex Multi-Agent Query
+POST http://localhost:8080/api/legal-assistant/analyze
+Content-Type: application/json
+
+{
+  "query": "Our startup is raising Series A funding. We need comprehensive legal analysis covering: 1) Investment term sheet review, 2) Compliance with securities regulations, 3) Intellectual property protection strategy, 4) Employment law considerations for equity compensation",
+  "documentType": "COMPREHENSIVE",
+  "jurisdiction": "Delaware",
+  "urgency": "HIGH"
+}
+
+###
+
+### 16. Test Error Handling - Empty Query
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=
+
+###
+
+### 17. Test Error Handling - Very Long Query
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=This is a very long legal query that tests the system's ability to handle extensive text input and ensure that the application can process large amounts of legal text without failing or timing out, which is important for real-world legal document analysis scenarios where lawyers might submit lengthy contract texts or complex legal questions that require detailed analysis from multiple specialized agents working together to provide comprehensive legal advice and recommendations
+
+###
+
+### 18. Test International Law Query
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=What are the differences between US and EU data protection laws for cross-border data transfers?
+
+###
+
+### 19. Test Real Estate Law
+POST http://localhost:8080/api/legal-assistant/analyze
+Content-Type: application/json
+
+{
+  "query": "Review commercial lease agreement for retail space including rent escalation clauses, maintenance responsibilities, and early termination options",
+  "documentType": "LEASE_AGREEMENT",
+  "jurisdiction": "New York",
+  "urgency": "MEDIUM"
+}
+
+###
+
+### 20. Test Corporate Law
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=What are the legal requirements for board of directors meetings and shareholder voting procedures in Delaware corporations?
+
+###
+
+### 21. Test Knowledge Base Search
+POST http://localhost:8080/api/legal-assistant/quick-analysis?query=Search legal precedents for trademark infringement cases in e-commerce platforms
+
+###
+
+### 22. Test Session Management
+POST http://localhost:8080/api/legal-assistant/analyze
+Content-Type: application/json
+
+{
+  "query": "This is a follow-up question about the previous contract analysis",
+  "documentType": "FOLLOW_UP",
+  "jurisdiction": "US",
+  "urgency": "LOW",
+  "sessionId": "test-session-001"
+}
+
+###
+
+### 23. Test API Documentation Access
+GET http://localhost:8080/swagger-ui.html
+
+###
+
+### 24. Test Health Management Endpoint
+GET http://localhost:8080/actuator/health
+
+###
+
+### 25. Test Application Info
+GET http://localhost:8080/actuator/info
+
+###

@@ -1,0 +1,184 @@
+2025-07-20 10:55:59 [main] INFO  c.e.l.LegalAgentApplication - Starting LegalAgentApplication using Java 22.0.2 with PID 19336 (C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent\target\classes started by yasse in C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent)
+2025-07-20 10:55:59 [main] INFO  c.e.l.LegalAgentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-20 10:56:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-20 10:56:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2025-07-20 10:56:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-20 10:56:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-20 10:56:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-20 10:56:01 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-20 10:56:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1655 ms
+2025-07-20 10:56:01 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-20 10:56:01 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-20 10:56:01 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-20 10:56:02 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-20 10:56:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-20 10:56:02 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:legaldb user=SA
+2025-07-20 10:56:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-20 10:56:02 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-20 10:56:02 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-20 10:56:03 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-20 10:56:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-20 10:56:11 [main] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/C:/Users/yasse/.m2/repository/ai/djl/huggingface/tokenizers/0.31.1/tokenizers-0.31.1.jar!/native/lib/tokenizers.properties
+2025-07-20 10:56:11 [main] INFO  c.e.l.service.LegalTeamService - Initializing LegalTeamService with Groq - baseUrl: https://api.groq.com/openai/v1, model: llama3-8b-8192
+2025-07-20 10:56:11 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'legalAssistantController': Unsatisfied dependency expressed through field 'legalTeamService': Error creating bean with name 'legalTeamService' defined in file [C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent\target\classes\com\email\legal_agent\service\LegalTeamService.class]: Failed to instantiate [com.email.legal_agent.service.LegalTeamService]: Constructor threw exception
+2025-07-20 10:56:11 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-20 10:56:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-07-20 10:56:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-07-20 10:56:11 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-07-20 10:56:11 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-20 10:56:12 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'legalAssistantController': Unsatisfied dependency expressed through field 'legalTeamService': Error creating bean with name 'legalTeamService' defined in file [C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent\target\classes\com\email\legal_agent\service\LegalTeamService.class]: Failed to instantiate [com.email.legal_agent.service.LegalTeamService]: Constructor threw exception
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.email.legal_agent.LegalAgentApplication.main(LegalAgentApplication.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'legalTeamService' defined in file [C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent\target\classes\com\email\legal_agent\service\LegalTeamService.class]: Failed to instantiate [com.email.legal_agent.service.LegalTeamService]: Constructor threw exception
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:321)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:309)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.email.legal_agent.service.LegalTeamService]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:223)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:145)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318)
+	... 34 common frames omitted
+Caused by: java.lang.IllegalStateException: Conflict: multiple HTTP clients have been found in the classpath: [dev.langchain4j.http.client.spring.restclient.SpringRestClientBuilderFactory, dev.langchain4j.http.client.jdk.JdkHttpClientBuilderFactory]. Please explicitly specify the one you wish to use.
+	at dev.langchain4j.http.client.HttpClientBuilderLoader.loadHttpClientBuilder(HttpClientBuilderLoader.java:20)
+	at dev.langchain4j.internal.Utils.getOrDefault(Utils.java:74)
+	at dev.langchain4j.model.openai.internal.DefaultOpenAiClient.<init>(DefaultOpenAiClient.java:36)
+	at dev.langchain4j.model.openai.internal.DefaultOpenAiClient$Builder.build(DefaultOpenAiClient.java:77)
+	at dev.langchain4j.model.openai.internal.DefaultOpenAiClient$Builder.build(DefaultOpenAiClient.java:74)
+	at dev.langchain4j.model.openai.OpenAiChatModel.<init>(OpenAiChatModel.java:89)
+	at dev.langchain4j.model.openai.OpenAiChatModel$OpenAiChatModelBuilder.build(OpenAiChatModel.java:437)
+	at com.email.legal_agent.service.LegalTeamService.<init>(LegalTeamService.java:45)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:210)
+	... 36 common frames omitted
+2025-07-20 10:58:51 [main] INFO  c.e.l.LegalAgentApplication - Starting LegalAgentApplication using Java 22.0.2 with PID 19352 (C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent\target\classes started by yasse in C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent)
+2025-07-20 10:58:51 [main] INFO  c.e.l.LegalAgentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-20 10:58:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-20 10:58:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2025-07-20 10:58:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-20 10:58:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-20 10:58:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-20 10:58:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-20 10:58:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1206 ms
+2025-07-20 10:58:52 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-20 10:58:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-20 10:58:52 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-20 10:58:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-20 10:58:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-20 10:58:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:legaldb user=SA
+2025-07-20 10:58:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-20 10:58:53 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-20 10:58:53 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-20 10:58:53 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-20 10:58:53 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-20 10:58:56 [main] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/C:/Users/yasse/.m2/repository/ai/djl/huggingface/tokenizers/0.31.1/tokenizers-0.31.1.jar!/native/lib/tokenizers.properties
+2025-07-20 10:58:56 [main] INFO  c.e.l.service.LegalTeamService - Initializing LegalTeamService with Groq - baseUrl: https://api.groq.com/openai/v1, model: llama3-8b-8192
+2025-07-20 10:58:57 [main] INFO  c.e.l.service.LegalTeamService - All legal agents initialized successfully with Groq
+2025-07-20 10:58:57 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-20 10:58:57 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:legaldb'
+2025-07-20 10:58:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-20 10:58:57 [main] INFO  c.e.l.LegalAgentApplication - Started LegalAgentApplication in 7.088 seconds (process running for 8.096)
+2025-07-20 11:03:01 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-20 11:03:09 [http-nio-8080-exec-2] INFO  c.e.l.c.LegalAssistantController - Quick analysis request: What are the key elements of a valid contract?
+2025-07-20 11:03:48 [http-nio-8080-exec-8] INFO  c.e.l.c.LegalAssistantController - Quick analysis request: Find recent court cases about software patent infringement in the US
+2025-07-20 11:04:20 [http-nio-8080-exec-6] INFO  c.e.l.c.LegalAssistantController - Received legal query analysis request: Review employment contract for non-compete clauses and intellectual property rights
+2025-07-20 11:04:20 [http-nio-8080-exec-6] INFO  c.e.l.service.LegalTeamService - Processing legal query for session: 8b3b3cee-9b3e-490f-ba5a-f388a04d3bea
+2025-07-20 11:04:20 [http-nio-8080-exec-6] INFO  c.e.l.service.LegalTeamService - Query type determined: CONTRACT_ANALYSIS
+2025-07-20 11:04:27 [http-nio-8080-exec-6] INFO  c.e.l.c.LegalAssistantController - Legal analysis completed for session: 8b3b3cee-9b3e-490f-ba5a-f388a04d3bea
+2025-07-20 15:02:31 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h58m3s519ms147µs600ns).
+2025-07-20 17:40:07 [main] INFO  c.e.l.LegalAgentApplication - Starting LegalAgentApplication using Java 22.0.2 with PID 17276 (C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent\target\classes started by yasse in C:\Users\yasse\OneDrive\Bureau\JavaSpring\Legal_Agent)
+2025-07-20 17:40:07 [main] INFO  c.e.l.LegalAgentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-20 17:40:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-20 17:40:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2025-07-20 17:40:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-20 17:40:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-20 17:40:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-20 17:40:09 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-20 17:40:09 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1749 ms
+2025-07-20 17:40:09 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-20 17:40:09 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-20 17:40:09 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-20 17:40:09 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-20 17:40:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-20 17:40:10 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:legaldb user=SA
+2025-07-20 17:40:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-20 17:40:10 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-20 17:40:10 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-20 17:40:10 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-20 17:40:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-20 17:40:14 [main] INFO  ai.djl.util.Platform - Found matching platform from: jar:file:/C:/Users/yasse/.m2/repository/ai/djl/huggingface/tokenizers/0.31.1/tokenizers-0.31.1.jar!/native/lib/tokenizers.properties
+2025-07-20 17:40:14 [main] INFO  c.e.l.service.LegalTeamService - Initializing LegalTeamService with Groq - baseUrl: https://api.groq.com/openai/v1, model: llama3-8b-8192
+2025-07-20 17:40:15 [main] INFO  c.e.l.service.LegalTeamService - All legal agents initialized successfully with Groq
+2025-07-20 17:40:15 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-20 17:40:15 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:legaldb'
+2025-07-20 17:40:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-20 17:40:15 [main] INFO  c.e.l.LegalAgentApplication - Started LegalAgentApplication in 9.31 seconds (process running for 14.148)
+2025-07-20 17:40:21 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-20 17:41:19 [http-nio-8080-exec-9] INFO  c.e.l.c.LegalAssistantController - Received legal query analysis request: Review employment contract for non-compete clauses and intellectual property rights
+2025-07-20 17:41:19 [http-nio-8080-exec-9] INFO  c.e.l.service.LegalTeamService - Processing legal query for session: session-1753024005914-gvoo3cz22
+2025-07-20 17:41:19 [http-nio-8080-exec-9] INFO  c.e.l.service.LegalTeamService - Query type determined: CONTRACT_ANALYSIS
+2025-07-20 17:41:23 [http-nio-8080-exec-9] INFO  c.e.l.c.LegalAssistantController - Legal analysis completed for session: session-1753024005914-gvoo3cz22
+2025-07-20 19:04:27 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m16s41ms307µs).
+2025-07-20 21:16:29 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h28m30s419ms271µs700ns).
+2025-07-20 21:35:33 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-20 21:35:33 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-20 21:35:34 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-20 21:35:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-07-20 21:35:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

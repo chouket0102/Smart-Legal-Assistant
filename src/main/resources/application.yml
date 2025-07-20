@@ -1,0 +1,149 @@
+# application.yml
+spring:
+  application:
+    name: smart-legal-assistant
+  
+  # Server configuration
+  server:
+    port: 8080
+    servlet:
+      context-path: /api
+  
+  # File upload configuration
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+      file-size-threshold: 2KB
+  
+  # Jackson configuration for JSON handling
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC
+  
+  # Database configuration (if needed for knowledge base)
+  datasource:
+    url: jdbc:h2:mem:legaldb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# Groq API Configuration
+groq:
+  api:
+    key: ${GROQ_API_KEY:your-groq-api-key}
+    base-url: ${GROQ_BASE_URL:https://api.groq.com/openai/v1}
+  model:
+    name: ${GROQ_MODEL_NAME:llama3-8b-8192}
+    temperature: ${GROQ_MODEL_TEMPERATURE:0.2}
+
+# Legal Assistant Configuration
+legal-assistant:
+  # Knowledge base configuration
+  knowledge-base:
+    embedding-model: text-embedding-ada-002
+    max-results: 10
+    min-score: 0.7
+  
+  # Agent configuration
+  agents:
+    legal-researcher:
+      max-memory-messages: 20
+      timeout-seconds: 60
+    contract-analyst:
+      max-memory-messages: 20
+      timeout-seconds: 45
+    compliance-agent:
+      max-memory-messages: 20
+      timeout-seconds: 45
+    legal-strategist:
+      max-memory-messages: 20
+      timeout-seconds: 60
+    team-coordinator:
+      max-memory-messages: 30
+      timeout-seconds: 90
+  
+  # External services configuration
+  external-services:
+    duckduckgo:
+      enabled: true
+      timeout-seconds: 30
+    government-sources:
+      timeout-seconds: 45
+      retry-attempts: 3
+
+# Logging configuration
+logging:
+  level:
+    com.email.legal_agent: INFO
+    dev.langchain4j: WARN
+    org.springframework.web: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/legal-assistant.log
+
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+# OpenAPI Documentation
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+
+---
+# Development profile
+spring:
+  config:
+    activate:
+      on-profile: development
+
+logging:
+  level:
+    com.email.legal_agent: DEBUG
+    dev.langchain4j: INFO
+    org.springframework.web: DEBUG
+
+legal-assistant:
+  external-services:
+    duckduckgo:
+      timeout-seconds: 10  # Faster timeout for development
+
+---
+# Test profile  
+spring:
+  config:
+    activate:
+      on-profile: test
+  
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+logging:
+  level:
+    root: WARN
+    com.email.legal_agent: DEBUG
