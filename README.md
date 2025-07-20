@@ -114,23 +114,3 @@ npm run dev
 
 ---
 
-#
-## 🎯 **Use Cases**
-
-### **For Law Firms**
-- **Contract Review**: Automated risk assessment and clause analysis
-- **Due Diligence**: Comprehensive document analysis for M&A
-- **Compliance Audits**: Regulatory requirement verification
-
-### **For Businesses**
-- **Legal Risk Management**: Proactive compliance monitoring
-- **Contract Negotiation**: Strategic advantage through AI insights
-- **Regulatory Updates**: Automated tracking of legal changes
-
-### **For Legal Departments**
-- **Document Processing**: Bulk contract analysis
-- **Research Automation**: Precedent discovery and citation
-- **Strategic Planning**: Data-driven legal strategy development
-
----
-
